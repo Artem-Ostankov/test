@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html ng-app="cv">
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <title>Angular 1</title>
+</head>
+<body ng-controller="WorkController as workCtrl">
+    
+    <div class="container" style="border-left:1px solid #ccc;border-right:1px solid #ccc">
+    <div class="row">
+        <div class="col-md-2">
+            <img class="img-rounded img-responsive" src="img/me_small.jpg" alt="Artem Face Image">
+        </div>
+        <div class="col-md-3 hidden-xs hidden-sm">&nbsp;</div>
+        <div class="col-md-9">
+            <h1>Artem Ostankov</h1>
+
+            <h3>Software Developer</h3>
+
+            <p><span style="display:block;width:25px;float:left"><i class="icon-home"></i></span><span>München, Germany</span>
+            </p>
+
+            <p><span style="display:block;width:25px;float:left"><i class="icon-envelope"></i></span><span>artem@ostankov.com</span>
+            </p>
+        </div>
+    </div>
+    <hr/>
+    <div class="row">
+        <div class="col-md-12">
+            <h2>Work Experience</h2>
+        </div>
+    </div>
+    <hr/>
+    <div class="list-group-item" ng-repeat="work in workCtrl.workExp">
+        <div class="row">
+            <div class="col-md-3" style="text-align:right">
+                <p class="lead">{{work.start}} - {{work.end}}</p>
+                <p class="text-right" >
+                    <img  class="img-rounded" ng-show="{{work.img != null}}" ng-src={{work.img}} />
+                </p>
+            </div>
+            <div class="col-md-9">
+                <p class="lead">Senior Software Developer</p>
+                <dl class="dl-horizontal">
+                    <dt>Company</dt>
+                    <dd>{{work.company}} </dd>
+                    <dt ng-show="{{work.site != null}}" >Site</dt>
+                    <dd ng-show="{{work.site != null}}" ><a href="http://{{work.site}}/" >{{work.site}}</a></dd>
+                    <dt>City</dt>
+                    <dd>{{work.city}}</dd>
+                    <dt>Activity field</dt>
+                    <dd>{{work.desc}}</dd>
+                </dl>
+                <h4>Responsibilities</h4>
+                <ul ng-repeat="resp in work.resp">
+                    <li>{{resp}}</li>
+                </ul>
+            </div>
+        </div>
+        </br>
+    </div>
+    <hr/>
+    <div class="row">
+        <div class="col-md-12">
+            <h2>Studies</h2>
+        </div>
+    </div>
+    <hr/>
+    <div class="row">
+        <div class="col-md-3" style="text-align:right"><p class="lead">2011 - 2013</p></div>
+        <div class="col-md-9">
+            <p class="lead">M.Sc in Informatics</p>
+            <dl class="dl-horizontal">
+                <dd>Technische Universität München, München</dd>
+                <dd>Department of Informatics</dd>
+            </dl>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3" style="text-align:right"><p class="lead">2006 - 2010</p></div>
+        <div class="col-md-9">
+            <p class="lead">B.Sc in Computer Science</p>
+            <dl class="dl-horizontal">
+                <dd>International Solomon university, Kiev</dd>
+                <dd>Department of Computer Science</dd>
+            </dl>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3" style="text-align:right"><p class="lead">1996 - 2006</p></div>
+        <div class="col-md-9">
+            <p class="lead">Secondary education</p>
+            <dl class="dl-horizontal">
+                <dd>Gymnasium #1, Simferopol</dd>
+                <dd>Department of Computer Science</dd>
+            </dl>
+        </div>
+    </div>
+    <hr/>
+    <div class="row">
+        <div class="col-md-3" style="text-align:right"><p class="lead">Romanian</p></div>
+        <div class="col-md-9">
+            <p class="lead">NATIVE LANGUAGE</p>
+            <dl class="dl-horizontal">
+                <dt>Speaking Level</dt>
+                <dd>Native Language</dd>
+                <dt>Reading Level</dt>
+                <dd>Native Language</dd>
+                <dt>Writing Level</dt>
+                <dd>Native Language</dd>
+            </dl>
+        </div>
+    </div>
+    </div>
+    
+    
+    <script type="text/javascript" src="js/angular.min.js"></script>
+    <script type="text/javascript" src="js/data.js"></script>
+</body>
+</html>
