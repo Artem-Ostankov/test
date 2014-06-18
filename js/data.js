@@ -8,6 +8,12 @@
 
     app.controller('WorkController', function () {
         this.workExp = workExpData;
+        this.studies = studiesData;
+        this.languages = languagesData;
+        this.aditionals = aditionalsData;
+        this.interest = interestsData;
+        this.progLangs = progLangsData;
+        this.techs = techsData;
     });
 
     var workExpData = [
@@ -118,5 +124,156 @@
                 "J2ME mobile apps"
             ]
         }
-    ]
+    ];
+
+    var studiesData = [
+        {
+            title: "M.Sc in Informatics",
+            org: "Technische Universität München",
+            city: "München",
+            country: "Germany",
+            department: "Department of Informatics",
+            start: 2011,
+            end: 2013
+        },
+        {
+            title: "B.Sc in Computer Science",
+            org: "International Solomon university",
+            city: "Kiev",
+            country: "Ukraine",
+            department: "Department of Computer Science",
+            start: 2006,
+            end: 2010
+
+        },
+        {
+            title: "Secondary education",
+            org: "Gymnasium #1",
+            city: "Simferopol",
+            country: "Ukraine",
+            start: 1996,
+            end: 2006
+        }
+    ];
+
+    var languagesData = [
+        {
+            lang: "Russian",
+            lvl: "Native"
+        },
+        {
+            lang: "Ukrainian",
+            lvl: "Native"
+        },
+        {
+            lang: "English",
+            lvl: "Fluent"
+        },
+        {
+            lang: "German",
+            lvl: "Fluent"
+        }
+    ];
+
+    var aditionalsData = [
+        "Graduate ranking: 3rd from 23",
+        "State student’s Olympiad in System Programming participant",
+        "HTC Android Contest participant",
+        "GTUG (Kiev and München) speaker and participant",
+        "Scrum working experience"
+    ];
+
+    var interestsData = [
+        "GameDev",
+        "Project Management",
+        "Augmented Reallity",
+        "Artificial Neural Networks",
+        "Biotechnologies, bioinformatics",
+        "Genetic researches and engineering",
+        "Distributed applications development",
+        "OpenGL, OpenGL ES",
+        "Android Development"
+    ];
+
+    var progLangsData = [
+        {
+            title: "Python",
+            lvl: "1",
+            exp: "6 months"
+        },
+        {
+            title: "Java",
+            lvl: "2",
+            exp: "4 years"
+        },
+        {
+            title: ".Net",
+            lvl: "1",
+            exp: "1 year"
+        },
+        {
+            title: "JavaScript",
+            lvl: "0",
+            exp: "4 months"
+        },
+        {
+            title: "C, C++",
+            lvl: "1",
+            exp: "2 years"
+        }
+    ];
+
+    var techsData = [
+        {
+            title: "MS .Net Framework 2.0-3.5",
+            lvl: "2",
+            exp: "1 year"
+        },
+        {
+            title: "J2SE",
+            lvl: "2",
+            exp: "1 year"
+        },
+        {
+            title: "Android",
+            lvl: "2",
+            exp: "3 years"
+        },
+        {
+            title: "OpenGL, DirectX, 3d graphics",
+            lvl: "1",
+            exp: "3 year"
+        },
+        {
+            title: "Unity3d",
+            lvl: "1",
+            exp: "1 year"
+        },
+        {
+            title: "iOS",
+            lvl: "0",
+            exp: "6 months"
+        },
+        {
+            title: "Python",
+            lvl: "1",
+            exp: "1 year"
+        },
+        {
+            title: "Amazon Web Services",
+            lvl: "1",
+            exp: "6 months"
+        },
+        {
+            title: "Google App Engine",
+            lvl: "1",
+            exp: "6 months"
+        },
+        {
+            title: "Lucene, ElasticSearch",
+            lvl: "2",
+            exp: "1 year"
+        }
+    ];
+
 })();
