@@ -3,11 +3,19 @@
 <head>
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-    <title>Angular 1</title>
+    <title>Artem Ostankov | CV </title>
+    <script type="text/javascript" src="js/jquery-2.1.0.min.js"></script>
+    <script>
+        $(function(){
+            $("#nav_bar").load("nav_bar.html");
+        });
+    </script>
 </head>
 <body ng-controller="WorkController as workCtrl">
+
+    <div id="nav_bar"></div>
     
-    <div class="container" style="border-left:1px solid #ccc;border-right:1px solid #ccc">
+    <div class="container" style=" padding-top: 80px; border-left:1px solid #ccc;border-right:1px solid #ccc">
     <div class="row">
         <div class="col-md-2">
             <img class="img-rounded img-responsive" src="img/me_small.jpg" alt="Artem Face Image">
@@ -52,7 +60,7 @@
                     <dt>Activity field</dt>
                     <dd>{{work.desc}}</dd>
                 </dl>
-                <h4>Responsibilities</h4>
+                <h4>Responsibilities:</h4>
                 <ul ng-repeat="resp in work.resp">
                     <li>{{resp}}</li>
                 </ul>
@@ -67,48 +75,135 @@
         </div>
     </div>
     <hr/>
-    <div class="row">
-        <div class="col-md-3" style="text-align:right"><p class="lead">2011 - 2013</p></div>
-        <div class="col-md-9">
-            <p class="lead">M.Sc in Informatics</p>
-            <dl class="dl-horizontal">
-                <dd>Technische Universität München, München</dd>
-                <dd>Department of Informatics</dd>
-            </dl>
+    <div class="list-group-item" ng-repeat="study in workCtrl.studies">
+        <div class="row">
+            <div class="col-md-3" style="text-align:right"><p class="lead">{{study.start}} - {{study.end}}</p></div>
+            <div class="col-md-9">
+                <p class="lead">{{study.title}}</p>
+                <div class="dl-horizontal">
+                    <p>{{study.org}}, {{study.city}}</p>
+                    <p>{{study.department}}</p>
+                </div>
+            </div>
         </div>
     </div>
+    <hr />
     <div class="row">
-        <div class="col-md-3" style="text-align:right"><p class="lead">2006 - 2010</p></div>
-        <div class="col-md-9">
-            <p class="lead">B.Sc in Computer Science</p>
-            <dl class="dl-horizontal">
-                <dd>International Solomon university, Kiev</dd>
-                <dd>Department of Computer Science</dd>
-            </dl>
+        <div class="col-md-12">
+            <h2>Personal Interests</h2>
         </div>
     </div>
-    <div class="row">
-        <div class="col-md-3" style="text-align:right"><p class="lead">1996 - 2006</p></div>
-        <div class="col-md-9">
-            <p class="lead">Secondary education</p>
-            <dl class="dl-horizontal">
-                <dd>Gymnasium #1, Simferopol</dd>
-                <dd>Department of Computer Science</dd>
-            </dl>
+    <div >
+        <div class="row">
+            <div class="col-md-5" ng-repeat="interest in workCtrl.interests">
+                <ul>
+                    <li>{{interest}}</li>
+                </ul>
+            </div>
         </div>
     </div>
     <hr/>
     <div class="row">
-        <div class="col-md-3" style="text-align:right"><p class="lead">Romanian</p></div>
-        <div class="col-md-9">
-            <p class="lead">NATIVE LANGUAGE</p>
+        <div class="col-md-12">
+            <h2>Additional notes</h2>
+        </div>
+    </div>
+    <div >
+        <div class="row">
+            <div class="col-md-5" ng-repeat="addition in workCtrl.additions">
+                <ul>
+                    <li>{{addition}}</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <hr/>
+    <div class="row">
+        <div class="col-md-12">
+            <h2>Languages</h2>
+        </div>
+    </div>
+    <div >
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>
+                        Title
+                    </th>
+                    <th>
+                        Level
+                    </th>
+                    <th>
+                        Experience
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="progLang in workCtrl.progLangs | orderBy:'-lvl'">
+                    <td>
+                        {{progLang.title}}
+                    </td>
+                    <td>
+                        {{workCtrl.getExp(progLang.lvl)}}
+                    </td>
+                    <td>
+                        {{progLang.exp}}
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <hr/>
+        <div class="row">
+            <div class="col-md-12">
+                <h2>Technologies</h2>
+            </div>
+        </div>
+        <div >
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th>
+                        Title
+                    </th>
+                    <th>
+                        Level
+                    </th>
+                    <th>
+                        Experience
+                    </th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="tech in workCtrl.techs | orderBy:'-lvl'">
+                    <td>
+                        {{tech.title}}
+                    </td>
+                    <td>
+                        {{tech.getExp(tech.lvl)}}
+                    </td>
+                    <td>
+                        {{tech.exp}}
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <hr/>
+    <div class="row">
+        <div class="col-md-12">
+            <h2>Languages</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-5">
             <dl class="dl-horizontal">
-                <dt>Speaking Level</dt>
-                <dd>Native Language</dd>
-                <dt>Reading Level</dt>
-                <dd>Native Language</dd>
-                <dt>Writing Level</dt>
-                <dd>Native Language</dd>
+                <dt>Native:</dt>
+                <dd>Russian and Ukrainian</dd>
+                <dt>Fluent:</dt>
+                <dd>English</dd>
+                <dt>Middle:</dt>
+                <dd>German</dd>
             </dl>
         </div>
     </div>

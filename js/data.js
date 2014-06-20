@@ -10,10 +10,21 @@
         this.workExp = workExpData;
         this.studies = studiesData;
         this.languages = languagesData;
-        this.aditionals = aditionalsData;
-        this.interest = interestsData;
+        this.additions = additionsData;
+        this.interests = interestsData;
         this.progLangs = progLangsData;
         this.techs = techsData;
+
+        this.getExp = function(val){
+            switch (val){
+                case 0:
+                    return "Beginner";
+                case 1:
+                    return "Middle";
+                case 2:
+                    return "Advanced";
+            }
+        };
     });
 
     var workExpData = [
@@ -175,7 +186,7 @@
         }
     ];
 
-    var aditionalsData = [
+    var additionsData = [
         "Graduate ranking: 3rd from 23",
         "State student’s Olympiad in System Programming participant",
         "HTC Android Contest participant",
@@ -197,83 +208,79 @@
 
     var progLangsData = [
         {
-            title: "Python",
-            lvl: "1",
-            exp: "6 months"
-        },
-        {
             title: "Java",
-            lvl: "2",
+            lvl: 2,
             exp: "4 years"
         },
         {
+            title: "Python",
+            lvl: 1,
+            exp: "6 months"
+        },
+        {
             title: ".Net",
-            lvl: "1",
+            lvl: 1,
             exp: "1 year"
         },
         {
-            title: "JavaScript",
-            lvl: "0",
-            exp: "4 months"
+            title: "C, C++",
+            lvl: 1,
+            exp: "2 years"
         },
         {
-            title: "C, C++",
-            lvl: "1",
-            exp: "2 years"
+            title: "JavaScript",
+            lvl: 0,
+            exp: "4 months"
         }
     ];
 
     var techsData = [
         {
+            title: "Android",
+            lvl: 2,
+            exp: "3 years"
+        },
+        {
+            title: "Lucene, ElasticSearch",
+            lvl: 2,
+            exp: "1 year"
+        },
+        {
             title: "MS .Net Framework 2.0-3.5",
-            lvl: "2",
+            lvl: 2,
             exp: "1 year"
         },
         {
             title: "J2SE",
-            lvl: "2",
-            exp: "1 year"
-        },
-        {
-            title: "Android",
-            lvl: "2",
-            exp: "3 years"
-        },
-        {
-            title: "OpenGL, DirectX, 3d graphics",
-            lvl: "1",
-            exp: "3 year"
-        },
-        {
-            title: "Unity3d",
-            lvl: "1",
-            exp: "1 year"
-        },
-        {
-            title: "iOS",
-            lvl: "0",
-            exp: "6 months"
-        },
-        {
-            title: "Python",
-            lvl: "1",
+            lvl: 2,
             exp: "1 year"
         },
         {
             title: "Amazon Web Services",
-            lvl: "1",
+            lvl: 1,
             exp: "6 months"
         },
         {
             title: "Google App Engine",
-            lvl: "1",
+            lvl: 1,
             exp: "6 months"
         },
         {
-            title: "Lucene, ElasticSearch",
-            lvl: "2",
+            title: "OpenGL, DirectX, 3d graphics",
+            lvl: 1,
+            exp: "3 year"
+        },
+        {
+            title: "Unity3d",
+            lvl: 1,
             exp: "1 year"
+        },
+        {
+            title: "iOS",
+            lvl: 0,
+            exp: "6 months"
         }
+
     ];
 
 })();
